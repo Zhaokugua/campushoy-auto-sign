@@ -97,6 +97,10 @@ export class Login {
       const response = res.data as DoLoginApi;
       if (response.resultCode === 'REDIRECT') {
         await this.client.get(response.url);
+        // 我看看正常返回的url到底是什么
+        Logger.info(
+          `Response的URL：${respinse.url}`,
+        );
         Logger.info(
           `User ${this.userConfig.school}-${this.userConfig.username} Logged Succeed`,
         );
